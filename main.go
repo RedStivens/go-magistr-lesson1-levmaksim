@@ -33,8 +33,8 @@ func getenvInt(name string, def int) int {
 }
 
 func main() {
-	interval := time.Duration(getenvInt("POLL_INTERVAL_MS", 1000)) * time.Millisecond
-	client := &http.Client{Timeout: 3 * time.Second}
+	interval := time.Duration(getenvInt("POLL_INTERVAL_MS", 200)) * time.Millisecond
+	client := &http.Client{Timeout: 1500 * time.Millisecond}
 
 	consecutiveErrors := 0
 	errorPrinted := false
